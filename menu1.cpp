@@ -1,6 +1,6 @@
 #include "menu1.h"
 
-void Menu::print()
+void Menu::introMenu()
 {
     char quit;
     std::cout << "Hello, please enter Y/y to enter audio file manipulation \n or enter N/n to exit the program." << std::endl;
@@ -12,6 +12,11 @@ void Menu::print()
     if(quit == 'n' || quit == 'N') 
     {
         exit(1);
+    }
+    if(std::cin.fail())
+    {
+        std::cout << "this is not the character y/Y or n/N \n please enter the right character" << std::endl;
+        
     }
 }
 
