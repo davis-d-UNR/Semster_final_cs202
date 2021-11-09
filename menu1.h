@@ -4,7 +4,7 @@ class Menu
 {
     std::string file_name;
 public:
-    void print();//prints the first instance of the menu.
+    void introMenu();//prints the first instance of the menu.
     void quitMenu();//will ask the user to quit or to manipulate the file again
     void setFileName(); // user will enter the file name and then call scanfile functions to test and write in metadata
 
