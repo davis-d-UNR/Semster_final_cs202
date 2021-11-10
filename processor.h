@@ -1,1 +1,5 @@
-// here the effects will be processed and made into the new files if the user decides to. 
+
+
+class processor {
+    virtual void buffer() = 0;
+};
