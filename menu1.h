@@ -1,9 +1,10 @@
 #include <iostream>
-#include "wavHeader.h"
+#include "wav.h"
+
 
 class Menu
 {
-    std::string file_name;
+    std::string fileName;
 
 public:
 

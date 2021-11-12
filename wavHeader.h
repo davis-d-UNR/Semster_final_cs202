@@ -1,6 +1,5 @@
 typedef struct wav_header {
 
-
 char riff_header[4];
 
 int wav_size;

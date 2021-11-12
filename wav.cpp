@@ -9,3 +9,9 @@ void Wav::readFile(const std::string &fileName) {
         file.close(); 
     } 
 } 
+
+void Wav::writeFile(const std::string &filename){
+
+
+    
+}

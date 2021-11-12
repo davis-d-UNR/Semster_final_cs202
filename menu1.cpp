@@ -17,7 +17,6 @@ void Menu::introMenu()
     if(std::cin.fail())
     {
         std::cout << "this is not the character y/Y or n/N \n please enter the right character" << std::endl;
-
     }
 }
 
@@ -26,18 +25,38 @@ void:: Menu::setFileName() //sets file name, calls scanfile to see if its a real
         std::string newFile;
 
         std::cout << "please enter the name of the audio file you would like manipulated" << std::endl;
+        while (1 == 1)
+    {
         std::cin >> newFile;
-        if(std::cin.fail()) //implement a try catch here.
-            {
-                error("you have not imputed any type of file format");
-            }
-        file_name = newFile; 
-        // here call the scan file class and test the file if it a .wav file.
+
+
+        if(newFile.length() < 4)
+        {
+            error("you have not inputed any type of file format \nPlease try again or enter exit to quit\n");
+        } else if(!(newFile.substr(newFile.length()-4) == ".wav")) //implement a try catch here.
+        {
+            error("you have not inputed any type of file format\nPlease try again or enter exit to quit\n");
+        }
+        if((newFile.substr(newFile.length()-4) == ".wav")) //implement a try catch here.
+        {
+           break;
+        }
+    }
+        fileName = newFile; 
+
+        Wav orginalFile;
+
+        orginalFile.readFile(fileName);
 }
 
-void Menu::error(std::string error_name) //displays error message 
+void Menu::error(std::string errorName) //displays error message 
 {
-    std::cout << "ERROR " << error_name << std:: endl; 
+
+    std::cout << "ERROR: " << errorName << std:: endl; 
+    std::cin >> errorName;
+    if(errorName == "exit")
+    exit(1);
+
 }
 //getting undefined refernce error when complying "g++ menu1.cpp", dont know why though. the .h file complies fine. 
 
@@ -48,3 +67,4 @@ void Menu::printMeta()
     std::cout << wavFile.byte_rate << std::endl;
     std::cout << wavFile.num_channels << std::endl;
 }
+
