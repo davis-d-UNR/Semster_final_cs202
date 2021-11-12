@@ -5,4 +5,4 @@ class GainAdjustment : public processor{
 
 
 
-}
+};

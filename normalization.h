@@ -5,4 +5,4 @@ class Normalization : public processor{
 
 
 
-}
+};
