@@ -1,5 +1,6 @@
 #include "menu1.h"
 
+
 void Menu::introMenu()
 {
     char quit;
@@ -16,7 +17,7 @@ void Menu::introMenu()
     if(std::cin.fail())
     {
         std::cout << "this is not the character y/Y or n/N \n please enter the right character" << std::endl;
-        
+
     }
 }
 
@@ -39,3 +40,11 @@ void Menu::error(std::string error_name) //displays error message
     std::cout << "ERROR " << error_name << std:: endl; 
 }
 //getting undefined refernce error when complying "g++ menu1.cpp", dont know why though. the .h file complies fine. 
+
+void Menu::printMeta()
+{
+    //std::cout << wavF << std::endl; // file name goes here
+    std::cout << wavFile.sample_rate << std::endl;
+    std::cout << wavFile.byte_rate << std::endl;
+    std::cout << wavFile.num_channels << std::endl;
+}

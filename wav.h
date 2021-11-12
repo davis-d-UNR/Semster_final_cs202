@@ -8,4 +8,5 @@ class Wav
     unsigned char* buffer;
 public: 
 void readFile(const std::string &);
+void writeFile (const std::string &);
 };

@@ -1,9 +1,13 @@
 #include <iostream>
+#include "wavHeader.h"
 
 class Menu
 {
     std::string file_name;
+
 public:
+
+    wav_header wavFile;
     void introMenu();//prints the first instance of the menu.
     void quitMenu();//will ask the user to quit or to manipulate the file again
     void setFileName(); // user will enter the file name and then call scanfile functions to test and write in metadata
@@ -17,5 +21,6 @@ public:
     void error(std::string); // outputs error message, and asks if the user will want to continue. calls quit menu.
                             //might be good to try making it a global to catch all error messages dont know whether to make it a virtual
                             // or make it a interface. 
-                            
+
+    void printMeta();                          
 };
