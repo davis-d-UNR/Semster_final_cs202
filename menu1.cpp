@@ -51,12 +51,10 @@ void:: Menu::setFileName() //sets file name, calls scanfile to see if its a real
 
 void Menu::error(std::string errorName) //displays error message 
 {
-
     std::cout << "ERROR: " << errorName << std:: endl; 
     std::cin >> errorName;
     if(errorName == "exit")
     exit(1);
-
 }
 
 
