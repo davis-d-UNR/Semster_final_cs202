@@ -77,7 +77,6 @@ void Wav::writeStruct(unsigned char* toStruct)
     
     std::cout << "13 " << waveHeader.data_bytes << std::endl;
 
-    
 }
 
 void Wav::writeFile(const std::string &filename)
@@ -86,3 +85,9 @@ void Wav::writeFile(const std::string &filename)
 
 }
 
+void Wav::printMeta()
+{
+//filename, smaple rate, bits per sample, stereo or mono.
+
+
+}
