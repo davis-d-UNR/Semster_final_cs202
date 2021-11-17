@@ -10,7 +10,6 @@ menu1.o: menu1.cpp menu1.h main.cpp
 wav.o: wav.cpp wav.h
 	g++ -std=c++11 -c wav.cpp wav.h
 
-
 echos.o: echos.cpp echos.h
 	g++ -std=c++11 -c echos.cpp echos.h
 

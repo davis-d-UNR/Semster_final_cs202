@@ -24,10 +24,10 @@ void Wav::writeStruct(unsigned char* toStruct)
 
     std::cout << "2 " << waveHeader.wav_size << std::endl;
 
-    toStruct[5] >> waveHeader.wav_header[0];// = toStruct[5];
-    toStruct[6] >> waveHeader.wav_header[1];//= toStruct[6];
-    toStruct[7] >> waveHeader.wav_header[2];// = toStruct[7];
-    toStruct[8] >> waveHeader.wav_header[3];// = toStruct[8];
+    toStruct[5] >> waveHeader.wav_header[0];
+    toStruct[6] >> waveHeader.wav_header[1];
+    toStruct[7] >> waveHeader.wav_header[2];
+    toStruct[8] >> waveHeader.wav_header[3];
 
      std::cout << "3 " << waveHeader.wav_header[0] << waveHeader.wav_header[1] << waveHeader.wav_header[2] << waveHeader.wav_header[3] << std::endl;
 
@@ -67,5 +67,19 @@ void Wav::writeStruct(unsigned char* toStruct)
 }
 
 
+<<<<<<< HEAD
+=======
+    toStruct[24] >> waveHeader.data_bytes;
+    
+    std::cout << "13 " << waveHeader.data_bytes << std::endl;
+
+    
+}
+>>>>>>> e5d902c09374dac340361a5a774154e9a21740bf
 
 
+<<<<<<< HEAD
+=======
+}
+
+>>>>>>> e5d902c09374dac340361a5a774154e9a21740bf
