@@ -47,6 +47,7 @@ void:: Menu::setFileName() //sets file name, calls scanfile to see if its a real
         Wav orginalFile;
 
         orginalFile.readFile(fileName);
+        printMeta();
 }
 
 void Menu::error(std::string errorName) //displays error message 
@@ -58,15 +59,14 @@ void Menu::error(std::string errorName) //displays error message
     exit(1);
 
 }
-//getting undefined refernce error when complying "g++ menu1.cpp", dont know why though. the .h file complies fine. 
 
 void Menu::printMeta()
 {
-    /*
+    
     //std::cout << wavF << std::endl; // file name goes here
-    std::cout << wavFile.riff_header[0] << wavFile.riff_header[1] << wavFile.riff_header[2] << wavFile.riff_header[3] << std::endl;
-    std::cout << wavFile.wav_size << std::endl;
-    std::cout << wavFile.num_channels << std::endl;
-    */
+    std::cout <<  "print meta 1: " << waveHeader.riff_header[0] << waveHeader.riff_header[1] << waveHeader.riff_header[2] << waveHeader.riff_header[3] << std::endl;
+    std::cout <<  "print meta 2: " << waveHeader.wav_size << std::endl;
+    std::cout <<  "print meta 3: " << waveHeader.num_channels << std::endl;
+    
 }
 
