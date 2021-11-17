@@ -87,6 +87,7 @@ void Wav::writeFile(const std::string &filename)
 
 void Wav::printMeta(const std::string &filename)
 {
+//filename, smaple rate, bits per sample, stereo or mono.
 std::cout << "the file name is: "<< filename << std::endl;
 std::cout << "the sample rate is: " << waveHeader.sample_rate << std::endl;
 std::cout << "the bits per sample is: " << waveHeader.byte_rate << std:: endl;
@@ -97,6 +98,6 @@ std::cout << "the file has a ";
     }
     if(waveHeader.num_channels > 1)
     {
-        std::cout << "stereo signal" << std::endl;
+        std::cout << " signal" << std::endl;
     }
 }
