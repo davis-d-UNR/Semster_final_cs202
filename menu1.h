@@ -1,6 +1,6 @@
 #include <iostream>
 #include "wav.h"
-
+#include "wavHeader.h"
 
 class Menu
 {

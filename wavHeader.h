@@ -1,3 +1,6 @@
+#ifndef WAV_HEADER_H_
+#define WAV_HEADER_H_
+
 typedef struct wav_header {
 
 char riff_header[4];
@@ -26,5 +29,6 @@ char data_header[4];
 
 int data_bytes;
 
-} wav_header;
+}wav_header;
 
+#endif

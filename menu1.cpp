@@ -62,9 +62,11 @@ void Menu::error(std::string errorName) //displays error message
 
 void Menu::printMeta()
 {
+    /*
     //std::cout << wavF << std::endl; // file name goes here
-    std::cout << wavFile.sample_rate << std::endl;
-    std::cout << wavFile.byte_rate << std::endl;
+    std::cout << wavFile.riff_header[0] << wavFile.riff_header[1] << wavFile.riff_header[2] << wavFile.riff_header[3] << std::endl;
+    std::cout << wavFile.wav_size << std::endl;
     std::cout << wavFile.num_channels << std::endl;
+    */
 }
 
