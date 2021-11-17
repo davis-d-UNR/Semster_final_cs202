@@ -67,19 +67,19 @@ void Wav::writeStruct(unsigned char* toStruct)
 }
 
 
-<<<<<<< HEAD
-=======
-    toStruct[24] >> waveHeader.data_bytes;
-    
-    std::cout << "13 " << waveHeader.data_bytes << std::endl;
-
-    
-}
->>>>>>> e5d902c09374dac340361a5a774154e9a21740bf
 
 
 <<<<<<< HEAD
 =======
 }
 
+<<<<<<< HEAD
 >>>>>>> e5d902c09374dac340361a5a774154e9a21740bf
+=======
+void Wav::printMeta()
+{
+//filename, smaple rate, bits per sample, stereo or mono.
+
+
+}
+>>>>>>> 454ac74ee68b046faa57b5a8541ad5315b144d4b

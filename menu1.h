@@ -7,7 +7,7 @@ class Menu
     std::string fileName;
 
 public:
-    wav_header waveHeader;
+   
     
     void introMenu();//prints the first instance of the menu.
     void quitMenu();//will ask the user to quit or to manipulate the file again
@@ -21,7 +21,9 @@ public:
 
     void error(std::string); // outputs error message, and asks if the user will want to continue. calls quit menu.
                             //might be good to try making it a global to catch all error messages dont know whether to make it a virtual
-                            // or make it a interface. 
+                            // or make it a interface.       
+    void processMenu();
 
-    void printMeta();                          
+
+
 };

@@ -47,7 +47,6 @@ void:: Menu::setFileName() //sets file name, calls scanfile to see if its a real
         Wav orginalFile;
 
         orginalFile.readFile(fileName);
-        printMeta();
 }
 
 void Menu::error(std::string errorName) //displays error message 
@@ -60,13 +59,10 @@ void Menu::error(std::string errorName) //displays error message
 
 }
 
-void Menu::printMeta()
+void Menu::processMenu()
 {
-    
-    //std::cout << wavF << std::endl; // file name goes here
-    std::cout <<  "print meta 1: " << waveHeader.riff_header[0] << waveHeader.riff_header[1] << waveHeader.riff_header[2] << waveHeader.riff_header[3] << std::endl;
-    std::cout <<  "print meta 2: " << waveHeader.wav_size << std::endl;
-    std::cout <<  "print meta 3: " << waveHeader.num_channels << std::endl;
-    
+
+
 }
+
 
