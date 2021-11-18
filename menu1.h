@@ -13,7 +13,7 @@ public:
     void quitMenu();//will ask the user to quit or to manipulate the file again
     void setFileName(); // user will enter the file name and then call scanfile functions to test and write in metadata
 
-    void chooseEffect();//user will pick effect to use on audio file will, calls set effects with each effect. Switch statement in .cpp. 
+    void processMenu();//user will pick effect to use on audio file will, calls set effects with each effect. Switch statement in .cpp. 
     void setEffect(); // user depending on the effct will select parameters for each effect, could use a template here.
                         // will call effects class and process from there. 
 
