@@ -60,27 +60,25 @@ void Menu::error(std::string errorName) //displays error message
 void Menu::processMenu()
 {
 
- int process;
+    int process;
 
- std::cout << "Please enter a number for a process to manipulate your file: " << std::endl;
+    std::cout << "Please enter a number for a process to manipulate your file: " << std::endl;
 
- std::cout << "1 - Normalization " << "2 - Echo " << "3 - Gain Adjustment " << std::endl;
-
- std::cin >> process;
-
- switch(process){
-
-    case 1:
-        break;
-    case 2:
-        break;
-    case 3:
-        break;
-    default:
-        std::cout << "Please enter either 1, 2, or 3." << std::endl;
-        break;
- }
-
+    std::cout << "1 - Normalization " << "2 - Echo " << "3 - Gain Adjustment " << std::endl;
+ // put input loop here.
+    std::cin >> process;
+           if(process == 1){ 
+              Normalization sound;
+             sound.buffer(); 
+           } else if(process == 2){ 
+              Normalization sound;
+             sound.buffer(); 
+           } else if(process == 3){ 
+              Normalization sound;
+             sound.buffer(); 
+           } else{
+             std::cout << "Please enter either 1, 2, or 3." << std::endl;
+           }
 }
 
 
