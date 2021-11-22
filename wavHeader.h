@@ -1,7 +1,7 @@
 #ifndef WAV_HEADER_H_
 #define WAV_HEADER_H_
 
-typedef struct wav_header {
+typedef struct wav_header{
 
 char riff_header[4];
 

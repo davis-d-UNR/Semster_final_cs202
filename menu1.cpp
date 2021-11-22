@@ -20,7 +20,7 @@ void Menu::introMenu()
     }
 }
 
-void:: Menu::setFileName() //sets file name, calls scanfile to see if its a real file. 
+void Menu::setFileName() //sets file name, calls scanfile to see if its a real file. 
 {
         std::string newFile;
 
@@ -71,10 +71,10 @@ void Menu::processMenu()
               Normalization sound;
              sound.buffer(); 
            } else if(process == 2){ 
-              Normalization sound;
+              Echo sound;
              sound.buffer(); 
            } else if(process == 3){ 
-              Normalization sound;
+              GainAdjustment sound;
              sound.buffer(); 
            } else{
              std::cout << "Please enter either 1, 2, or 3." << std::endl;
