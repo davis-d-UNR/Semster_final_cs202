@@ -3,6 +3,6 @@
 
 class GainAdjustment : public processor{
 
-
+void buffer() override;
 
 };

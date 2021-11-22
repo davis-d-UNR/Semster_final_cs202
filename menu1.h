@@ -1,6 +1,10 @@
 #include <iostream>
 #include "wav.h"
 #include "wavHeader.h"
+#include "processor.h"
+#include "normalization.h"
+#include "echos.h"
+#include "gainadjustment.h"
 
 class Menu
 {

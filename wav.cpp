@@ -98,6 +98,6 @@ std::cout << "the file has a ";
     }
     if(waveHeader.num_channels > 1)
     {
-        std::cout << " signal" << std::endl;
+        std::cout << " stereo signal" << std::endl;
     }
 }

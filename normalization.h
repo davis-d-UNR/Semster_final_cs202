@@ -3,6 +3,7 @@
 
 class Normalization : public processor{
 
-
+public:
+void buffer() override;
 
 };
