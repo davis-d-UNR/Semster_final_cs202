@@ -10,9 +10,9 @@ class Wav
     
     unsigned char* buffer;
 public: 
-     wav_header waveHeader;
+    wav_header waveHeader;
 void readFile(const std::string &);
 void writeStruct(unsigned char*);
 void writeFile (const std::string &);
-void printMeta();
+void printMeta(const std::string &);
 };

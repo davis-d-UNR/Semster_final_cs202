@@ -64,15 +64,33 @@ void Wav::writeStruct(unsigned char* toStruct)
 
     toStruct[19] >> waveHeader.bit_depth;
     
+    std::cout << "11 " << waveHeader.bit_depth << std::endl;
+
+    toStruct[20] >> waveHeader.data_header[0];
+    toStruct[21] >> waveHeader.data_header[1];
+    toStruct[22] >> waveHeader.data_header[2];
+    toStruct[23] >> waveHeader.data_header[3];
+    
+    std:: cout << "12 " << waveHeader.data_header[0] << waveHeader.data_header[1] << waveHeader.data_header[2] << waveHeader.data_header[3] << std::endl;
+
+    toStruct[24] >> waveHeader.data_bytes;
+    
+    std::cout << "13 " << waveHeader.data_bytes << std::endl;
 }
 
-
-
-
-
-void Wav::printMeta()
+void Wav::printMeta(const std::string &filename)
 {
 //filename, smaple rate, bits per sample, stereo or mono.
-
-
+std::cout << "the file name is: "<< filename << std::endl;
+std::cout << "the sample rate is: " << waveHeader.sample_rate << std::endl;
+std::cout << "the bits per sample is: " << waveHeader.byte_rate << std:: endl;
+std::cout << "the file has a ";
+    if(waveHeader.num_channels == 1)
+    {
+        std::cout << "mono signal" << std::endl;
+    }
+    if(waveHeader.num_channels > 1)
+    {
+        std::cout << " signal" << std::endl;
+    }
 }
