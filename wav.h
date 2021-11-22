@@ -13,6 +13,6 @@ public:
     wav_header waveHeader;
 void readFile(const std::string &);
 void writeStruct(unsigned char*);
-void writeFile (const std::string &);
+void writeFile (int ,const std::string &);
 void printMeta(const std::string &);
 };

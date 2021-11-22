@@ -94,3 +94,19 @@ std::cout << "the file has a ";
         std::cout << " stereo signal" << std::endl;
     }
 }
+
+void Wav::writeFile(int effect, const std::string &filename)
+{
+    switch (effect)
+    {
+        case 1:
+        //Gain adjustment
+        break;
+        case 2:
+        //Echos 
+        break;
+        case 3: 
+        //Normaliaztion
+        break;
+    }
+}
