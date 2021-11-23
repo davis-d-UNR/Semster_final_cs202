@@ -1,8 +1,7 @@
-
 #pragma once
 
 class processor {
 
     public: 
-    virtual void buffer() = 0;
+    virtual void processeBuffer(char* buffer, size_t bufferSize) = 0;
 };

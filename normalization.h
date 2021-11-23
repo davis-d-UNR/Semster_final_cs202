@@ -5,6 +5,6 @@
 class Normalization : public processor{
 
 public:
-void buffer() override;
+void processeBuffer(char* buffer, size_t bufferSize) override;
 
 };
