@@ -3,5 +3,5 @@
 class processor {
 
     public: 
-    virtual void processeBuffer(char* buffer, size_t bufferSize) = 0;
+    virtual void processeBuffer(unsigned char* buffer, size_t bufferSize) = 0;
 };
