@@ -12,6 +12,7 @@ void Wav::readFile(const std::string &fileName) {
         file.read((char*)buffer, waveHeader.data_bytes); 
         file.close(); 
         writeStruct(buffer);
+        printMeta(fileName);
     } 
 } 
 
@@ -85,6 +86,7 @@ void Wav::writeStruct(unsigned char* toStruct)
 void Wav::printMeta(const std::string &filename)
 {
 //filename, smaple rate, bits per sample, stereo or mono.
+std::cout << std::endl;
 std::cout << "the file name is: "<< filename << std::endl;
 std::cout << "the sample rate is: " << waveHeader.sample_rate << std::endl;
 std::cout << "the bits per sample is: " << waveHeader.byte_rate << std:: endl;
@@ -102,18 +104,20 @@ std::cout << "the file has a ";
 void Wav::writeFile(int effect, int amount)
 {
     if(effect == 1)
-    { /*
+    { 
         Normalization normalObject;
         normalObject.processeBuffer(buffer, sizeof(waveHeader));
-        */
+        
     } 
     else if(effect == 2)
     {
-    //Echo echoObject;
+        Echo echoObject;
+        echoObject.processeBuffer(buffer, sizeof(waveHeader));
     } 
     else if(effect == 3)
     { 
-   // GainAdjustment GAobject;
+        GainAdjustment GAobject;
+        GAobject.processeBuffer(buffer, sizeof(waveHeader));
     }
            
 }
