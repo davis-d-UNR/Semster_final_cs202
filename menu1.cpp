@@ -61,6 +61,7 @@ void Menu::processMenu()
 {
 
     int process;
+    int scale;
 
     std::cout << "Please enter a number for a process to manipulate your file: " << std::endl;
 
@@ -69,13 +70,16 @@ void Menu::processMenu()
     std::cin >> process;
 
             if(process == 1){      
-                orginalFile.writeFile(1);
+                scale = askValue();
+                orginalFile.writeFile(1, scale);
             } 
             else if(process == 2){ 
-                orginalFile.writeFile(2);
+                scale = askValue();
+                orginalFile.writeFile(2,scale);
             } 
             else if(process == 3){ 
-                orginalFile.writeFile(3);        
+                scale = askValue();
+                orginalFile.writeFile(3,scale);        
             }
             else{
          std::cout << "Please enter either 1, 2, or 3." << std::endl;
@@ -97,4 +101,9 @@ void Menu::processMenu()
            */
 }
 
-
+int Menu::askValue(){
+    int scale;
+    std::cout << "how much do you want to scale this effect" << std::endl;
+    std::cin >> scale;
+    return scale;
+}

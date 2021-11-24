@@ -2,7 +2,7 @@
 #include "normalization.h"
 #include "echos.h"
 #include "gainadjustment.h"
-#inlcude "processor.h"
+#include "processor.h"
 
 void Wav::readFile(const std::string &fileName) { 
     std::ifstream file("/home/davisd/cs202/Semster_final_cs202/piano.wav",std::ios::binary | std::ios::in); 
@@ -101,34 +101,19 @@ std::cout << "the file has a ";
 
 void Wav::writeFile(int effect, int amount)
 {
-
-    switch(effect){
-        case 1: 
-            Normalization normalObject;
-            processeBuffer(amount);
-        case 2:
-            Echo echoObject;
-
-        case 3:
-            GainAdjustment GAobject;
-        default:
-            break;
-
+    if(effect == 1)
+    { /*
+        Normalization normalObject;
+        normalObject.processeBuffer(buffer, sizeof(waveHeader));
+        */
+    } 
+    else if(effect == 2)
+    {
+    //Echo echoObject;
+    } 
+    else if(effect == 3)
+    { 
+   // GainAdjustment GAobject;
     }
-
-
-
-    /*
-             if(effect == 1){ 
-            processor *processor = new Normalization(th)
-            normal.processeBuffer(buffer, sizeof(waveHeader)); 
-
-           } else if(effect == 2){ 
-
-             processeBuffer(buffer, sizeof(waveHeader)); 
-           } else if(effect == 3){ 
-
-            processeBuffer(buffer, sizeof(waveHeader)); 
-           }
-           */
+           
 }

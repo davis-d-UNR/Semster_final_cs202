@@ -1,6 +1,7 @@
 #include "processor.h"
 #include "wavHeader.h"
 #include <iostream>
+#include <cstddef>
 
 class Normalization : public processor{
 public:

@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstddef>
+#include <string>
 #include "wav.h"
 #include "wavHeader.h"
 #include "processor.h"
@@ -27,5 +29,6 @@ public:
     void error(std::string); // outputs error message, and asks if the user will want to continue. calls quit menu.
                             //might be good to try making it a global to catch all error messages dont know whether to make it a virtual
                             // or make it a interface.       
-   
+    
+    int askValue();
 };

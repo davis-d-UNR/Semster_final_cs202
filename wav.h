@@ -3,6 +3,7 @@
 #include <iostream>
 #include "wavHeader.h"
 #include "processor.h"
+#include <cstddef>
 
 
 class Wav
