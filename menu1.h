@@ -11,7 +11,8 @@ class Menu
     std::string fileName;
 
 public:
-   
+
+    Wav orginalFile;
     
     void introMenu();//prints the first instance of the menu.
     void quitMenu();//will ask the user to quit or to manipulate the file again

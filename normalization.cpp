@@ -1,6 +1,6 @@
 #include "normalization.h"
 
-void Normalization::buffer() 
+void Normalization::processeBuffer(unsigned char* buffer, size_t bufferSize) 
 {
      std::cout << "normalization effect" << std::endl;
 

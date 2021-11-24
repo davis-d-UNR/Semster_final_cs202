@@ -1,8 +1,9 @@
 #include <fstream>
 #include <string>
-#include "wavHeader.h"
-
 #include <iostream>
+#include "wavHeader.h"
+#include "processor.h"
+
 
 class Wav
 {
@@ -13,6 +14,6 @@ public:
     wav_header waveHeader;
 void readFile(const std::string &);
 void writeStruct(unsigned char*);
-void writeFile (int ,const std::string &);
+void writeFile (int);
 void printMeta(const std::string &);
 };

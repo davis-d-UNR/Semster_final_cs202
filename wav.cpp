@@ -95,18 +95,19 @@ std::cout << "the file has a ";
     }
 }
 
-void Wav::writeFile(int effect, const std::string &filename)
+void Wav::writeFile(int effect)
 {
-    switch (effect)
-    {
-        case 1:
-        //Gain adjustment
-        break;
-        case 2:
-        //Echos 
-        break;
-        case 3: 
-        //Normaliaztion
-        break;
-    }
+    /*
+             if(effect == 1){ 
+            processor *processor = new Normalization(th)
+            normal.processeBuffer(buffer, sizeof(waveHeader)); 
+
+           } else if(effect == 2){ 
+
+             processeBuffer(buffer, sizeof(waveHeader)); 
+           } else if(effect == 3){ 
+
+            processeBuffer(buffer, sizeof(waveHeader)); 
+           }
+           */
 }

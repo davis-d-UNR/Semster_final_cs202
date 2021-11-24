@@ -44,7 +44,7 @@ void Menu::setFileName() //sets file name, calls scanfile to see if its a real f
     }
         fileName = newFile; 
 
-        Wav orginalFile;
+
 
         orginalFile.readFile(fileName);
 }
@@ -67,6 +67,21 @@ void Menu::processMenu()
     std::cout << "1 - Normalization " << "2 - Echo " << "3 - Gain Adjustment " << std::endl;
  // put input loop here.
     std::cin >> process;
+
+            if(process == 1){      
+                orginalFile.writeFile(1);
+            } 
+            else if(process == 2){ 
+                orginalFile.writeFile(1);
+            } 
+            else if(process == 3){ 
+                orginalFile.writeFile(1);        
+            }
+            else{
+         std::cout << "Please enter either 1, 2, or 3." << std::endl;
+       }
+    
+    /*
            if(process == 1){ 
               Normalization sound;
              sound.buffer(); 
@@ -79,6 +94,7 @@ void Menu::processMenu()
            } else{
              std::cout << "Please enter either 1, 2, or 3." << std::endl;
            }
+           */
 }
 
 
