@@ -105,5 +105,10 @@ int Menu::askValue(){
     int scale;
     std::cout << "how much do you want to scale this effect" << std::endl;
     std::cin >> scale;
+    while(std::cin.fail())
+    {
+        std::cout << "please enter an integer" << std::endl;
+        std::cin >> scale;
+    }
     return scale;
 }
