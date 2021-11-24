@@ -72,10 +72,10 @@ void Menu::processMenu()
                 orginalFile.writeFile(1);
             } 
             else if(process == 2){ 
-                orginalFile.writeFile(1);
+                orginalFile.writeFile(2);
             } 
             else if(process == 3){ 
-                orginalFile.writeFile(1);        
+                orginalFile.writeFile(3);        
             }
             else{
          std::cout << "Please enter either 1, 2, or 3." << std::endl;

@@ -14,6 +14,6 @@ public:
     wav_header waveHeader;
 void readFile(const std::string &);
 void writeStruct(unsigned char*);
-void writeFile (int);
+void writeFile (int, int);
 void printMeta(const std::string &);
 };
