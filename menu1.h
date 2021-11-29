@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cstddef>
 #include <string>
+#include <typeinfo>
 #include "wav.h"
 #include "wavHeader.h"
 #include "processor.h"

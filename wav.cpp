@@ -106,18 +106,18 @@ void Wav::writeFile(int effect, int amount)
     if(effect == 1)
     { 
         Normalization normalObject;
-        normalObject.processeBuffer(buffer, sizeof(waveHeader));
+        normalObject.processeBuffer(buffer, sizeof(waveHeader),amount);
         
     } 
     else if(effect == 2)
     {
         Echo echoObject;
-        echoObject.processeBuffer(buffer, sizeof(waveHeader));
+        echoObject.processeBuffer(buffer, sizeof(waveHeader),amount);
     } 
     else if(effect == 3)
     { 
         GainAdjustment GAobject;
-        GAobject.processeBuffer(buffer, sizeof(waveHeader));
+        GAobject.processeBuffer(buffer, sizeof(waveHeader),amount);
     }
            
 }

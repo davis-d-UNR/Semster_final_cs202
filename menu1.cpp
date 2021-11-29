@@ -70,11 +70,11 @@ void Menu::processMenu()
     std::cin >> process;
 
             if(process == 1){      
-                scale = askValue();
+                scale = 0;
                 orginalFile.writeFile(1, scale);
             } 
             else if(process == 2){ 
-                scale = askValue();
+                scale = 0;
                 orginalFile.writeFile(2,scale);
             } 
             else if(process == 3){ 
@@ -103,12 +103,15 @@ void Menu::processMenu()
 
 int Menu::askValue(){
     int scale;
+    do{
+    std::cin.clear();
+    std::cin.ignore(1000,'\n');
     std::cout << "how much do you want to scale this effect" << std::endl;
     std::cin >> scale;
-    while(std::cin.fail())
-    {
-        std::cout << "please enter an integer" << std::endl;
-        std::cin >> scale;
-    }
+
+    } 
+    while (std::cin.fail());
+    
+  std::cout << "askValue works" << std::endl;
     return scale;
 }

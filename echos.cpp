@@ -1,7 +1,7 @@
 #include "echos.h"
 
-void Echo::processeBuffer(unsigned char* buffer, size_t bufferSize)
+void Echo::processeBuffer(unsigned char* buffer, size_t bufferSize, int scale)
 {
-  std::cout << "echo effect" << std::endl;
+  
 
 }
