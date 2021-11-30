@@ -103,16 +103,37 @@ std::cout << "the file has a ";
 
 void Wav::writeFile(int effect, int amount)
 {
+
+    switch(waveHeader.bit_depth){
+
+        case 8:
+            Boundaries.max = 255;
+            Boundaries.mid = 128;
+            min = 0;
+            break;
+
+        case 16:
+            max = 32767;
+            mid = 0;
+            min = -32767
+            break;
+
+        
+
+    }
+
+
+
     if(effect == 1)
     { 
         Normalization normalObject;
-        normalObject.processeBuffer(buffer, sizeof(waveHeader),amount);
+        normalObject.processeBuffer(buffer, sizeof(waveHeader),amount, mid);
         
     } 
     else if(effect == 2)
     {
         Echo echoObject;
-        echoObject.processeBuffer(buffer, sizeof(waveHeader),amount);
+        echoObject.processeBuffer(buffer, sizeof(waveHeader),amount, mid);
     } 
     else if(effect == 3)
     { 

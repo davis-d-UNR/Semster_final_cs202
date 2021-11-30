@@ -4,6 +4,7 @@
 #include "wavHeader.h"
 #include "processor.h"
 #include <cstddef>
+#include "boundaries.h"
 
 
 class Wav
@@ -17,4 +18,5 @@ void readFile(const std::string &);
 void writeStruct(unsigned char*);
 void writeFile (int, int);
 void printMeta(const std::string &);
+    boundaries Boundaries;
 };
