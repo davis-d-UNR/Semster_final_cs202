@@ -1,11 +1,8 @@
 #include "wav.h"
-#include "normalization.h"
-#include "echos.h"
-#include "gainadjustment.h"
 #include "processor.h"
 
 void Wav::readFile(const std::string &fileName) { 
-    std::ifstream file("/home/davisd/cs202/Semster_final_cs202/piano.wav",std::ios::binary | std::ios::in); 
+    std::ifstream file("/home/davisd/cs202/Semster_final_cs202/piano2 copy.wav",std::ios::binary | std::ios::in); 
     if(file.is_open()){ 
         file.read((char*)&waveHeader, sizeof(wav_header)); 
         buffer = new unsigned char[waveHeader.data_bytes]; 
@@ -89,8 +86,8 @@ void Wav::printMeta(const std::string &filename)
 std::cout << std::endl;
 std::cout << "the file name is: "<< filename << std::endl;
 std::cout << "the sample rate is: " << waveHeader.sample_rate << std::endl;
-std::cout << "the bits per sample is: " << waveHeader.byte_rate << std:: endl;
-std::cout << "the file has a ";
+std::cout << "the bits per sample is: " << waveHeader.bit_depth << std:: endl;
+std::cout << "the file has a " ;
     if(waveHeader.num_channels == 1)
     {
         std::cout << "mono signal" << std::endl;
@@ -105,19 +102,43 @@ void Wav::writeFile(int effect, int amount)
 {
     if(effect == 1)
     { 
-        Normalization normalObject;
+      
         normalObject.processeBuffer(buffer, sizeof(waveHeader),amount);
         
     } 
     else if(effect == 2)
     {
-        Echo echoObject;
+       
         echoObject.processeBuffer(buffer, sizeof(waveHeader),amount);
     } 
     else if(effect == 3)
     { 
-        GainAdjustment GAobject;
+       
         GAobject.processeBuffer(buffer, sizeof(waveHeader),amount);
+        unsigned char * test;
+        test = GAobject.SaveFile();
+        saveFile(test);
     }
            
+}
+
+void Wav::saveFile(unsigned char * buffer)
+{
+    std::cout << "savefile" << std::endl;
+    std::vector<float> output;
+    std::ofstream save("/home/davisd/cs202/Semster_final_cs202/piano2 copy.wav", std::ios::out | std::ios::binary);
+     for(int x = 0; x < waveHeader.data_bytes-1; x++)
+    {
+        std::cout <<waveHeader.data_bytes << std::endl;
+        buffer[x] = (short) buffer[x];//(int16_t) (buffer[x] * scale);
+        if (x ==  waveHeader.data_bytes-2)
+        {
+            std::cout << "loop" << std::endl;
+            break;
+        }
+    }
+    save.write((char*) &waveHeader,sizeof(waveHeader));
+    save.write((char*)buffer, waveHeader.data_bytes);
+    save.close();
+    std::cout << "file saved" << std::endl;
 }

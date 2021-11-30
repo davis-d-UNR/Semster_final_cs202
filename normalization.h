@@ -6,5 +6,5 @@
 class Normalization : public processor{
 public:
 void processeBuffer(unsigned char* buffer, size_t bufferSize, int scale) override;
-void SaveFile() override;
+unsigned char * SaveFile() override;
 };
