@@ -109,17 +109,16 @@ void Wav::writeFile(int effect, int amount)
         case 8:
             Boundaries.max = 255;
             Boundaries.mid = 128;
-            min = 0;
+            Boundaries.min = 0;
             break;
 
         case 16:
-            max = 32767;
-            mid = 0;
-            min = -32767
+            Boundaries.max = 32767;
+            Boundaries.mid = 0;
+            Boundaries.min = -32767;
             break;
-
-        
-
+        default:
+            break;
     }
 
 
@@ -127,18 +126,18 @@ void Wav::writeFile(int effect, int amount)
     if(effect == 1)
     { 
         Normalization normalObject;
-        normalObject.processeBuffer(buffer, sizeof(waveHeader),amount, mid);
+        normalObject.processeBuffer(buffer, sizeof(waveHeader),amount, Boundaries.mid);
         
     } 
     else if(effect == 2)
     {
         Echo echoObject;
-        echoObject.processeBuffer(buffer, sizeof(waveHeader),amount, mid);
+        echoObject.processeBuffer(buffer, sizeof(waveHeader),amount, Boundaries.mid);
     } 
     else if(effect == 3)
     { 
         GainAdjustment GAobject;
-        GAobject.processeBuffer(buffer, sizeof(waveHeader),amount);
+        GAobject.processeBuffer(buffer, sizeof(waveHeader),amount, Boundaries.mid);
     }
            
 }

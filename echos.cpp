@@ -1,6 +1,6 @@
 #include "echos.h"
 
-void Echo::processeBuffer(unsigned char* buffer, size_t bufferSize, int scale)
+void Echo::processeBuffer(unsigned char* buffer, size_t bufferSize, int scale, int mid)
 {
   float gain  = 0.5;
   int delay = 1;
