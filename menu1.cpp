@@ -5,19 +5,20 @@ void Menu::introMenu()
 {
     char quit;
     std::cout << "Hello, please enter Y/y to enter audio file manipulation \n or enter N/n to exit the program." << std::endl;
-    std::cin >> quit;
-    if(quit == 'y' || quit == 'Y') 
-    {
-        setFileName();
-    } 
-    if(quit == 'n' || quit == 'N') 
-    {
-        exit(1);
-    }
-    if(std::cin.fail())
-    {
-        std::cout << "this is not the character y/Y or n/N \n please enter the right character" << std::endl;
-    }
+    do {
+        std::cin >> quit;
+        if(quit == 'y' || quit == 'Y') 
+        {
+            setFileName();
+            break;
+        } else if(quit == 'n' || quit == 'N') 
+        {
+            exit(1);
+        } else
+        {
+            std::cout << "this is not the character y/Y or n/N \n please enter the right character" << std::endl;
+        }
+    }while(1 == 1);
 }
 
 void Menu::setFileName() //sets file name, calls scanfile to see if its a real file. 
@@ -27,17 +28,18 @@ void Menu::setFileName() //sets file name, calls scanfile to see if its a real f
         std::cout << "please enter the name of the audio file you would like manipulated" << std::endl;
         while (1 == 1)
     {
+        std::cin.clear();
+        std::cin.ignore(1000, '\n');
         std::cin >> newFile;
 
 
         if(newFile.length() < 4)
         {
-            error("you have not inputed any type of file format \nPlease try again or enter exit to quit\n");
-        } else if(!(newFile.substr(newFile.length()-4) == ".wav")) //implement a try catch here.
+            std::cout << "you have not inputed any type of file format \nPlease try again\n";
+        } else if(!(newFile.substr(newFile.length()-4) == ".wav")) 
         {
-            error("you have not inputed any type of file format\nPlease try again or enter exit to quit\n");
-        }
-        if((newFile.substr(newFile.length()-4) == ".wav")) //implement a try catch here.
+            std::cout<< "you have not inputed any type of file format\nPlease try again\n";
+        }else if((newFile.substr(newFile.length()-4) == ".wav"))
         {
            break;
         }
@@ -50,14 +52,6 @@ void Menu::setFileName() //sets file name, calls scanfile to see if its a real f
        // orginalFile.printMeta(fileName);
 }
 
-void Menu::error(std::string errorName) //displays error message 
-{
-    std::cout << "ERROR: " << errorName << std:: endl; 
-    std::cin >> errorName;
-    if(errorName == "exit")
-    exit(1);
-}
-
 void Menu::processMenu()
 {
 
@@ -67,7 +61,7 @@ void Menu::processMenu()
     std::cout << "Please enter a number for a process to manipulate your file: " << std::endl;
 
     std::cout << "1 - Normalization " << "2 - Echo " << "3 - Gain Adjustment " << std::endl;
- // put input loop here.
+do {
     std::cin >> process;
 
             if(process == 1){      
@@ -85,8 +79,7 @@ void Menu::processMenu()
             else{
          std::cout << "Please enter either 1, 2, or 3." << std::endl;
        }
-    
-
+    }while((process > 3 && process < 1) || std::cin.fail());
 }
 
 int Menu::askValue(){

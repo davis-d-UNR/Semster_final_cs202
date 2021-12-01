@@ -24,11 +24,7 @@ public:
     void setEffect(); // user depending on the effct will select parameters for each effect, could use a template here.
                         // will call effects class and process from there. 
 
-    void askForChange();// will ask user if the file is changed to their liking, if not the changes will not be saved.
-
-    void error(std::string); // outputs error message, and asks if the user will want to continue. calls quit menu.
-                            //might be good to try making it a global to catch all error messages dont know whether to make it a virtual
-                            // or make it a interface.       
+    void askForChange();// will ask user if the file is changed to their liking, if not the changes will not be saved. 
     
     int askValue();
 };
