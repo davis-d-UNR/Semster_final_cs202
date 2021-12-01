@@ -7,6 +7,5 @@
 
 class GainAdjustment : public processor{
 public:
-void processeBuffer(unsigned char* buffer, size_t bufferSize, int scale, int mid) override;
-void SaveFile() override;
+unsigned char * processeBuffer(unsigned char* buffer, size_t bufferSize, int scale, int mid) override;
 };

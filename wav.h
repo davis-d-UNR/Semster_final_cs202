@@ -25,5 +25,6 @@ void readFile(const std::string &);
 void writeStruct(unsigned char*);
 void writeFile (int, int);
 void printMeta(const std::string &);
+void saveFile(unsigned char *);
     boundaries Boundaries;
 };

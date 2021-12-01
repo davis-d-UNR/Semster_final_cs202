@@ -5,7 +5,7 @@
 
 
 
-void Normalization::processeBuffer(unsigned char* buffer, size_t bufferSize, int scale, int mid) 
+unsigned char * Normalization::processeBuffer(unsigned char* buffer, size_t bufferSize, int scale, int mid) 
 {
      int maxValue = 0;
 
@@ -18,10 +18,6 @@ void Normalization::processeBuffer(unsigned char* buffer, size_t bufferSize, int
           float scaleF = (Boundaries.max - mid) / buffer[maxValue] - mid;
           buffer[i] = ((buffer[i] - mid) * scaleF) + mid;
      }
+     return buffer;
 }
 
-unsigned char* Normalization::SaveFile()
-{
-
-    
-}

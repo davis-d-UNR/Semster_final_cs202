@@ -80,26 +80,13 @@ void Menu::processMenu()
             } 
             else if(process == 3){ 
                 scale = askValue();
-                orginalFile.writeFile(3,scale);        
+                orginalFile.writeFile(3,scale);     
             }
             else{
          std::cout << "Please enter either 1, 2, or 3." << std::endl;
        }
     
-    /*
-           if(process == 1){ 
-              Normalization sound;
-             sound.buffer(); 
-           } else if(process == 2){ 
-              Echo sound;
-             sound.buffer(); 
-           } else if(process == 3){ 
-              GainAdjustment sound;
-             sound.buffer(); 
-           } else{
-             std::cout << "Please enter either 1, 2, or 3." << std::endl;
-           }
-           */
+
 }
 
 int Menu::askValue(){

@@ -1,30 +1,19 @@
 #include "gainadjustment.h"
 
-void GainAdjustment::processeBuffer(unsigned char* buffer, size_t bufferSize ,int scale, int mid)
+unsigned char * GainAdjustment::processeBuffer(unsigned char* buffer, size_t bufferSize ,int scale, int mid)
 {
     std::cout << "GA before effect" << std::endl;
-    /*
+    
     for(int x = 0; x < bufferSize-1; x++)
     {
-       newBuffer[x] = 128;
+      buffer[x] = mid;
     }
-    */
+    
     std::cout << "GA after" << std::endl;
-    
-    buffer2 = newBuffer;
-    
-}
-
-unsigned char * GainAdjustment::SaveFile()
-{ 
-    std::cout << "GA save" << std::endl;
-    return buffer2;
-   /*
-    saving.write((char*)buffer, waveHeader.data_bytes); 
-    */
+    return buffer;
+   // buffer2 = newBuffer;
     
 }
-
 
 /*
     std::ifstream file("/home/davisd/cs202/Semster_final_cs202/piano.wav",std::ios::binary | std::ios::in); 

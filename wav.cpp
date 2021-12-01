@@ -123,18 +123,20 @@ void Wav::writeFile(int effect, int amount)
     if(effect == 1)
     { 
         Normalization normalObject;
-        normalObject.processeBuffer(buffer, sizeof(waveHeader),amount, Boundaries.mid);
-        
+        buffer = normalObject.processeBuffer(buffer, sizeof(waveHeader),amount, Boundaries.mid);
+        saveFile(buffer);        
     } 
     else if(effect == 2)
     {
         Echo echoObject;
-        echoObject.processeBuffer(buffer, sizeof(waveHeader),amount, Boundaries.mid);
+        buffer = echoObject.processeBuffer(buffer, sizeof(waveHeader),amount, Boundaries.mid);
+        saveFile(buffer);
     } 
     else if(effect == 3)
     { 
         GainAdjustment GAobject;
-        GAobject.processeBuffer(buffer, sizeof(waveHeader),amount, Boundaries.mid);
+        buffer = GAobject.processeBuffer(buffer, sizeof(waveHeader),amount, Boundaries.mid);
+        saveFile(buffer);
     }
            
 }
@@ -142,20 +144,26 @@ void Wav::writeFile(int effect, int amount)
 void Wav::saveFile(unsigned char * buffer)
 {
     std::cout << "savefile" << std::endl;
-    std::vector<float> output;
-    std::ofstream save("/home/davisd/cs202/Semster_final_cs202/piano2 copy.wav", std::ios::out | std::ios::binary);
-     for(int x = 0; x < waveHeader.data_bytes-1; x++)
-    {
-        std::cout <<waveHeader.data_bytes << std::endl;
-        buffer[x] = (short) buffer[x];//(int16_t) (buffer[x] * scale);
-        if (x ==  waveHeader.data_bytes-2)
-        {
-            std::cout << "loop" << std::endl;
-            break;
-        }
-    }
-    save.write((char*) &waveHeader,sizeof(waveHeader));
-    save.write((char*)buffer, waveHeader.data_bytes);
-    save.close();
-    std::cout << "file saved" << std::endl;
+    std::fstream save("/home/davisd/cs202/Semster_final_cs202/piano copy.wav", std::ios::binary | std::ios::out);   
+    std::ifstream file("/home/davisd/cs202/Semster_final_cs202/piano2 copy.wav",std::ios::binary | std::ios::in); 
+
+    save.write((char*)&waveHeader, sizeof(waveHeader));
+    short int temp;                                                 
+    short int ch[100000], ch2[100000];                          
+    int i,j;                                                        
+        for(i=0; i<100000; i++)                                   
+                ch2[i] = 0;                                         
+    while(!file.eof())                                             
+    {                                                               
+        for(i=0; i<100000 && !file.eof(); i++)                   
+        file.read((char*)&ch[i], sizeof(short int));               
+        for(i=0; i<100000; i++)                                   
+                {                                                   
+                    temp  = ch[i];                                  
+                    ch[i]+=ch2[i];                                  
+                    save.write((char*)&ch[i], sizeof(short int));
+                    ch2[i] = temp;                                  
+                }                                                   
+                                                                
+}
 }

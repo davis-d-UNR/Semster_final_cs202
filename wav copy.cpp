@@ -1,4 +1,4 @@
-#include "wav.h"
+/*#include "wav.h"
 #include "processor.h"
 
 void Wav::readFile(const std::string &fileName) { 
@@ -141,3 +141,4 @@ void Wav::saveFile(unsigned char * buffer)
     save.close();
     std::cout << "file saved" << std::endl;
 }
+*/
