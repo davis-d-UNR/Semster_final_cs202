@@ -3,7 +3,6 @@
 #include <iostream>
 #include <cstddef>
 #include "boundaries.h"
-#include "wav.h"
 
 class Normalization : public processor{
 public:
