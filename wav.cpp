@@ -146,7 +146,15 @@ void Wav::saveFile(unsigned char * buffer)
     std::cout << "savefile" << std::endl;
     std::fstream save("/home/davisd/cs202/Semster_final_cs202/piano copy.wav", std::ios::binary | std::ios::out);   
     std::ifstream file("/home/davisd/cs202/Semster_final_cs202/piano2 copy.wav",std::ios::binary | std::ios::in); 
-
+    
+    save.write((char*)&waveHeader, sizeof(waveHeader));
+    int i = 0;
+    while(!file.eof())
+    {
+        save.write((char*)&buffer[i], sizeof(short int));
+        i++;
+    }
+/*
     save.write((char*)&waveHeader, sizeof(waveHeader));
     short int temp;                                                 
     short int ch[100000], ch2[100000];                          
@@ -163,7 +171,6 @@ void Wav::saveFile(unsigned char * buffer)
                     ch[i]+=ch2[i];                                  
                     save.write((char*)&ch[i], sizeof(short int));
                     ch2[i] = temp;                                  
-                }                                                   
-                                                                
-}
-}
+                }                           
+                */                        
+}                                        

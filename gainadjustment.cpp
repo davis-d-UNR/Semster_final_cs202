@@ -4,9 +4,9 @@ unsigned char * GainAdjustment::processeBuffer(unsigned char* buffer, size_t buf
 {
     std::cout << "GA before effect" << std::endl;
     
-    for(int x = 0; x < bufferSize-1; x++)
+    for(int x = 0; x < bufferSize; x++)
     {
-      buffer[x] = mid;
+      buffer[x] =  128;
     }
     
     std::cout << "GA after" << std::endl;

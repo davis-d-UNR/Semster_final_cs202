@@ -47,7 +47,7 @@ void Menu::setFileName() //sets file name, calls scanfile to see if its a real f
 
 
         orginalFile.readFile(fileName);
-        orginalFile.printMeta(fileName);
+       // orginalFile.printMeta(fileName);
 }
 
 void Menu::error(std::string errorName) //displays error message 
@@ -100,6 +100,6 @@ int Menu::askValue(){
     } 
     while (std::cin.fail());
     
- 
+
     return scale;
 }
