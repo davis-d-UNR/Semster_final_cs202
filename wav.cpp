@@ -100,24 +100,41 @@ std::cout << "the file has a " ;
 
 void Wav::writeFile(int effect, int amount)
 {
+
+    switch(waveHeader.bit_depth){
+
+        case 8:
+            Boundaries.max = 255;
+            Boundaries.mid = 128;
+            Boundaries.min = 0;
+            break;
+
+        case 16:
+            Boundaries.max = 32767;
+            Boundaries.mid = 0;
+            Boundaries.min = -32767;
+            break;
+        default:
+            break;
+    }
+
+
+
     if(effect == 1)
     { 
-      
-        normalObject.processeBuffer(buffer, sizeof(waveHeader),amount);
+        Normalization normalObject;
+        normalObject.processeBuffer(buffer, sizeof(waveHeader),amount, Boundaries.mid);
         
     } 
     else if(effect == 2)
     {
-       
-        echoObject.processeBuffer(buffer, sizeof(waveHeader),amount);
+        Echo echoObject;
+        echoObject.processeBuffer(buffer, sizeof(waveHeader),amount, Boundaries.mid);
     } 
     else if(effect == 3)
     { 
-       
-        GAobject.processeBuffer(buffer, sizeof(waveHeader),amount);
-        unsigned char * test;
-        test = GAobject.SaveFile();
-        saveFile(test);
+        GainAdjustment GAobject;
+        GAobject.processeBuffer(buffer, sizeof(waveHeader),amount, Boundaries.mid);
     }
            
 }

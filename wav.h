@@ -5,6 +5,7 @@
 #include "wavHeader.h"
 #include "processor.h"
 #include <cstddef>
+#include "boundaries.h"
 
 #include "normalization.h"
 #include "echos.h"
@@ -24,8 +25,5 @@ void readFile(const std::string &);
 void writeStruct(unsigned char*);
 void writeFile (int, int);
 void printMeta(const std::string &);
-void saveFile(unsigned char *);
-    Normalization normalObject;
-    Echo echoObject;
-    GainAdjustment GAobject;
+    boundaries Boundaries;
 };
